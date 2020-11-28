@@ -30,6 +30,191 @@ defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
 defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
 defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
+$matkul = [
+  "id" => ["NINF6023","NINF6025","NINF6027","NINF6022","NINF6024","NINF6026","NINF6030","NINF6033","NINF6028","NINF6031","NINF6029","NINF6037","NINF6034","NINF6032","NINF6036","NINF6038","NINF6035","UPKL6090","NINF6100","NINF6044","NINF6056","NINF6055"],
+  "data" => [
+              [
+                "nama_mk" => "Rekayasa Perangkat Lunak", //NINF6023
+                "jadwal_mk" => "Senin, 12:00-15:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Komputasi Numerik", //NINF6025
+                "jadwal_mk" => "Senin, 15:00-17:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Pemrograman Deklaratif", //NINF6027
+                "jadwal_mk" => "Selasa, 07:00-09:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6006"
+                ]
+              ],
+              [
+                "nama_mk" => "Probabilitas dan Statistik", //NINF6022
+                "jadwal_mk" => "Selasa, 09:00-11:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Komunikasi Data dan Jaringan Komputer", //NINF6024
+                "jadwal_mk" => "Selasa, 11:00-13:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Grafika Komputer", //NINF6026
+                "jadwal_mk" => "Selasa, 11:00-13:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6014"
+                ]
+              ],
+              [
+                "nama_mk" => "Proyek Perangkat Lunak", //NINF6030
+                "jadwal_mk" => "Senin, 07:00-10:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6023"
+                ]
+              ],
+              [
+                "nama_mk" => "Analisis dan Desain Sistem",//NINF6033
+                "jadwal_mk" => "Senin, 10:00-12:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6023"
+                ]
+              ],
+              [
+                "nama_mk" => "Kecerdasan Buatan",//NINF6028
+                "jadwal_mk" => "Selasa, 13:00-15:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6006"
+                ]
+              ],
+              [
+                "nama_mk" => "Analisis dan Desain Algoritma",//NINF6031
+                "jadwal_mk" => "Selasa, 15:00-17:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6012"
+                ]
+              ],
+              [
+                "nama_mk" => "Multimedia",//NINF6029
+                "jadwal_mk" => "Rabu, 07:00-10:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Sosioteknologi Informatika",//NINF6037
+                "jadwal_mk" => "Rabu, 10:00-12:00",
+                "sks" => 2,
+                "mk_prasyarat" => [
+                  "NINF6004"
+                ]
+              ],
+              [
+                "nama_mk" => "Metodologi Penelitian",//NINF6034
+                "jadwal_mk" => "Rabu, 12:00-14:00",
+                "sks" => 2,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Interaksi Manusia dan Komputer",//NINF6032
+                "jadwal_mk" => "Rabu, 14:00-17:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Mobile dan Wireless Computing",//NINF6036
+                "jadwal_mk" => "Kamis, 07:00-10:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  "NINF6024"
+                ]
+              ],
+              [
+                "nama_mk" => "Seminar Pra Skripsi",//NINF6038
+                "jadwal_mk" => "Kamis, 11:00-12:00",
+                "sks" => 1,
+                "mk_prasyarat" => [
+                  "NINF6034"
+                ]
+              ],
+              [
+                "nama_mk" => "Technopreneurship",//NINF6035
+                "jadwal_mk" => "Kamis, 12:00-14:00",
+                "sks" => 2,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Praktik Kerja Industri",//UPKL6090
+                "jadwal_mk" => "Kamis, 14:00-17:00",
+                "sks" => 4,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Skripsi",//UPKL6100
+                "jadwal_mk" => "Jumat, 07:00-10:00",
+                "sks" => 4,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Proyek Game",//NINF6044
+                "jadwal_mk" => "Jumat, 10:00-13:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Semantic Web",//NINF6056
+                "jadwal_mk" => "Jumat, 13:00-16:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+              [
+                "nama_mk" => "Computer Vision",//NINF6055
+                "jadwal_mk" => "Jumat, 13:00-16:00",
+                "sks" => 3,
+                "mk_prasyarat" => [
+                  ""
+                ]
+              ],
+            ]
+];
+
+
+defined('matkul') OR define('matkul', $matkul);
+
 
 /*
 |--------------------------------------------------------------------------
