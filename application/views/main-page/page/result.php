@@ -75,52 +75,69 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                <!-- Page Heading -->
-               <h1 class="h3 mb-2 text-gray-800">Menu Rancang KRS</h1>
-               <p class="mb-4">Silahkan ambil mata kuliah yang tersedia dan pastikan memenuhi <a href="http://elektro.um.ac.id/wp-content/uploads/2016/02/Kurikulum-2019-S1-TI.pdf">persyaratan</a> yang ada.</p>
+               <h1 class="h3 mb-4 text-gray-800">Hasil KRS</h1>
                <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                     <h6 class="m-0 font-weight-bold text-primary">Daftar Mata Kuliah</h6>
+                     <h6 class="m-0 font-weight-bold text-primary">
+					 <?php if(count($prasyarat)):?>
+						KRS anda gagal dibuat karena adanya mata kuliah yang tidak memenuhi persyaratan!
+					 <?php else:?>
+						Berikut adalah KRS anda berdasarkan mata kuliah yang dipilih:	
+					 <?php endif;?>
+					 </h6>
                   </div>
                   <div class="card-body text-center">
-						<form method="post" action="<?=current_url()?>">
-						<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
-                     <div class="table-responsive">
-                        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                           <div class="row">
-                              <div class="col-sm-12">
-                                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                    <thead>
-                                       <tr role="row">
-                                          <th rowspan="1" colspan="1" style="width: 38px;">Check Untuk Ambil</th>
-                                          <th rowspan="1" colspan="1" style="width: 61px;">Kode Mata Kuliah</th>
-														<th rowspan="1" colspan="1" style="width: 50px;">Nama Mata Kuliah</th>
-														<th rowspan="1" colspan="1" style="width: 50px;">SKS</th>
-														<th rowspan="1" colspan="1" style="width: 50px;">Jadwal</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-												<?php foreach($matkul as $mk => $m):?>
-                                       <tr role="row">
-														<?php if($m["telah_selesai"]):?>
-														<td><span class="badge badge-success">Telah Diselesaikan</span></td>
-														<?php else:?>
-                                          <td><input style="width: 20px; height: 20px;" type="checkbox" name="ambil_matkul[]" id="" value="<?=$mk?>"></td>
-														<?php endif;?>
-                                          <td><?=$mk;?></td>
-														<td><?=$m['nama_mk'];?></td>
-														<td><?=$m['sks'];?></td>
-														<td><?=$m['jadwal_mk'];?></td>
-														</tr>
-												<?php endforeach;?>
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-							<input class="btn btn-danger mt-3 text-center" align="center" type="submit" value="Submit">
-							</form>
-                  </div>
+                    <div class="table-responsive">
+						<div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+							<div class="row">
+								<div class="col-sm-12">
+								<?php if(count($prasyarat)):?>
+								<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+									<thead>
+										<tr role="row">
+											<th rowspan="1" colspan="1" style="width: 61px;">Nama Mata Kuliah Yang Diambil</th>
+											<th rowspan="1" colspan="1" style="width: 50px;">Nama Mata Kuliah Prasyarat</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($prasyarat as $idmkprasyarat => $idmkdiambil):?>
+										<tr role="row">
+										<td><?=$this->matkul['data'][$idmkdiambil]['nama_mk'];?></td>
+										<td><?=$this->matkul['data'][$idmkprasyarat]['nama_mk'];?></td>
+										</tr>
+										<?php endforeach;?>
+									</tbody>
+								</table>
+								<?php else:?>
+								<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+									<thead>
+										<tr role="row">
+											<th rowspan="1" colspan="1" style="width: 61px;">Kode Mata Kuliah</th>
+											<th rowspan="1" colspan="1" style="width: 50px;">Nama Mata Kuliah</th>
+											<th rowspan="1" colspan="1" style="width: 50px;">SKS</th>
+											<th rowspan="1" colspan="1" style="width: 50px;">Jadwal</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php foreach($diambil as $d):?>
+										<tr role="row">
+											<td><?=$d;?></td>
+											<td><?=$this->matkul['data'][$d]['nama_mk'];?></td>
+											<td><?=$this->matkul['data'][$d]['sks'];?></td>
+											<td><?=$this->matkul['data'][$d]['jadwal_mk'];?></td>
+										</tr>
+										<?php endforeach;?>
+									</tbody>
+								</table>
+								<?php endif;?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php if(count($prasyarat)):?>
+					<a href="<?php echo site_url('');?>" class="btn btn-primary mt-3 text-center" align="center">Kembali ke pilih KRS</a>
+					<?php endif;?>
+				</div>
                </div>
             </div>
             <!-- /.container-fluid -->
