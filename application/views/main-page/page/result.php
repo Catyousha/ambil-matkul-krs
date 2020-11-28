@@ -119,13 +119,15 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php $count = 0;?>
 										<?php foreach($diambil as $d):?>
 										<tr role="row">
 											<td><?=$d;?></td>
 											<td><?=$this->matkul['data'][$d]['nama_mk'];?></td>
 											<td><?=$this->matkul['data'][$d]['sks'];?></td>
-											<td><?=$this->matkul['data'][$d]['jadwal_mk'];?></td>
+											<td><?=$jadwal[$count]?></td>
 										</tr>
+										<?php $count = $count + 1;?>
 										<?php endforeach;?>
 									</tbody>
 								</table>

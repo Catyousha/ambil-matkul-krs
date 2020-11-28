@@ -95,21 +95,15 @@
                                           <th rowspan="1" colspan="1" style="width: 61px;">Kode Mata Kuliah</th>
 														<th rowspan="1" colspan="1" style="width: 50px;">Nama Mata Kuliah</th>
 														<th rowspan="1" colspan="1" style="width: 50px;">SKS</th>
-														<th rowspan="1" colspan="1" style="width: 50px;">Jadwal</th>
                                        </tr>
                                     </thead>
                                     <tbody>
 												<?php foreach($matkul as $mk => $m):?>
                                        <tr role="row">
-														<?php if($m["telah_selesai"]):?>
-														<td><span class="badge badge-success">Telah Diselesaikan</span></td>
-														<?php else:?>
                                           <td><input style="width: 20px; height: 20px;" type="checkbox" name="ambil_matkul[]" id="" value="<?=$mk?>"></td>
-														<?php endif;?>
                                           <td><?=$mk;?></td>
 														<td><?=$m['nama_mk'];?></td>
 														<td><?=$m['sks'];?></td>
-														<td><?=$m['jadwal_mk'];?></td>
 														</tr>
 												<?php endforeach;?>
                                     </tbody>
@@ -161,4 +155,9 @@
             </div>
          </div>
       </div>
-   </div>
+	</div>
+<?php if($this->session->flashdata('maxSKS')):?>
+<script>
+	alert("Mata kuliah yang diambil tidak boleh melebihi jumlah SKS maksimal (24 SKS)!");
+</script>
+<?php endif;?>
