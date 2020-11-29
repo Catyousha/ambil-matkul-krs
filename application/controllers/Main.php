@@ -349,11 +349,15 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
+		if(!$this->session->has_userdata('Nama')){
+			redirect('/login');
+		}
 		error_reporting(E_ALL & ~E_NOTICE);
 		$data['matkul'] = $this->matkul['data'];
-//		var_dump($data['matkul']['NINF6055']['mk_prasyarat']); die;
-		$data['title'] = 'Ambil KRS';
+		//		var_dump($data['matkul']['NINF6055']['mk_prasyarat']); die;
+		$data['title'] = 'Ambil KRS | Rancang KRS';
 		$this->load->view('main-page/include/head.php', $data);
+		$this->load->view('main-page/include/head-navbar.php', $data);
 		$this->load->view('main-page/page/main.php', $data);
 		$this->load->view('main-page/include/foot.php', $data);
 		if(isset($_POST['ambil_matkul'])){
@@ -374,23 +378,76 @@ class Main extends CI_Controller {
 				}
 				$this->session->set_userdata('matkulambil', $idMatkulDiambil);
 				$this->session->set_userdata('matkulprasyarat', $listMatkulPrasyarat);
+				$this->session->set_userdata('SKS', $total_sks);
 				redirect('/result');
 			}
 		}
 	}
 
 	public function result(){
-		$data['title'] = 'Hasil KRS';
+		if(!$this->session->has_userdata('Nama')){
+			redirect('/login');
+		}
+		$data['title'] = 'Hasil | Rancang KRS';
 		$data['diambil'] = $this->session->userdata('matkulambil');
 		$data['prasyarat'] = $this->session->userdata('matkulprasyarat');
-
+		$data['sks'] = $this->session->userdata('SKS');
 		$data['jadwal'] = ['Senin, 1-3','Senin, 4-6','Senin, 7-9',
 						   'Selasa, 1-3','Selasa, 4-6','Selasa, 7-9',
 						   'Rabu, 1-3','Rabu, 4-6','Rabu, 7-9',
 						   'Kamis, 1-3','Kamis, 4-6','Kamis, 7-9',
 						   'Jumat, 1-3','Jumat, 4-6','Jumat, 7-9'];
 		$this->load->view('main-page/include/head.php', $data);
+		$this->load->view('main-page/include/head-navbar.php', $data);
 		$this->load->view('main-page/page/result.php', $data);
 		$this->load->view('main-page/include/foot.php', $data);
+	}
+
+	public function login(){
+		
+		$data['title'] = 'Login | Rancang KRS';
+		$data['mhs'] = array(
+			'190535746102' => array(
+				'nama' => 'Angga Dian Permana Putra',
+				'pass' => '12345678'
+			),
+			'190535646020' => array(
+				'nama' => 'Jaka Asa Baldan Ahmad',
+				'pass' => '87654321'
+			),
+			'190535646006' => array(
+				'nama' => 'Rizki Indah Pertiwi',
+				'pass' => '123123123'
+			),
+			'190535646077' => array(
+				'nama' => 'Sylvia Helmi Nurjannah',
+				'pass' => '321321321'
+			)
+		);
+		
+		$this->load->view('main-page/include/head', $data);
+		$this->load->view('main-page/page/login', $data);
+		
+		$nim = $this->input->post('f_nim');
+		$pass = $this->input->post('f_pass');
+		if(isset($_POST['tryLogin'])){
+			
+			if(!key_exists($nim, $data['mhs'])){
+				$this->session->set_flashdata('NimNotFound', true);
+				redirect('/login');
+			}
+			else{
+				if($pass != $data['mhs'][$nim]['pass']){
+					$this->session->set_flashdata('WrongPass', true);
+					redirect('/login');
+				}
+				else{
+					//session_destroy();
+					$this->session->set_userdata('Nama', $data['mhs'][$nim]['nama']);
+					redirect('');
+				}
+			}
+		}
+
 	}
 }
