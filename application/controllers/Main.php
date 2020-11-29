@@ -11,6 +11,132 @@ class Main extends CI_Controller {
 			$this->matkul = array(
 				//"id" => ["NINF6023","NINF6025","NINF6027","NINF6022","NINF6024","NINF6026","NINF6030","NINF6033","NINF6028","NINF6031","NINF6029","NINF6037","NINF6034","NINF6032","NINF6036","NINF6038","NINF6035","UPKL6090","NINF6100","NINF6044","NINF6056","NINF6055"],
 				"data" => array(
+							"NINF6003" => [
+								"nama_mk" => "K3LH", //NINF6003
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 2,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6005" => [
+								"nama_mk" => "Sistem Digital", //NINF6005
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6007" => [
+								"nama_mk" => "Matematika Diskrit", //NINF6007
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6002" => [
+								"nama_mk" => "Kalkulus I", //NINF6002
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6011" => [
+								"nama_mk" => "Basis Data I", //NINF6011
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6010" => [
+								"nama_mk" => "Organisasi dan Arsitektur Komputer", //NINF6010
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6005"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6015" => [
+								"nama_mk" => "Sistem Informasi", //NINF6015
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6009" => [
+								"nama_mk" => "Kalkulus II", //NINF6009
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6002"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6020" => [
+								"nama_mk" => "Basis Data II", //NINF6020
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6020"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6016" => [
+								"nama_mk" => "Pemrograman Web", //NINF6016
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6006"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6016" => [
+								"nama_mk" => "Teori Bahasa dan Automata", //NINF6016
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6006"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6019" => [
+								"nama_mk" => "Pemrograman Berorientasi Obyek", //NINF6019
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6006"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6021" => [
+								"nama_mk" => "Kalkulus Lanjut", //NINF6021
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								"NINF6009"
+								]
+								//'telah_selesai' => false
+							],
+							"NINF6017" => [
+								"nama_mk" => "Sistem Operasi", //NINF6017
+								//"jadwal_mk" => "Selasa, 11:00-13:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								""
+								]
+								//'telah_selesai' => false
+							],
 							"NINF6004" => [
 								"nama_mk" => "Pengantar Teknologi Informasi", //NINF6004
 								//"jadwal_mk" => "Selasa, 11:00-13:00",
@@ -217,7 +343,7 @@ class Main extends CI_Controller {
 							  //'telah_selesai' => false
 							],
 							)
-			  
+
 			);
 	}
 
