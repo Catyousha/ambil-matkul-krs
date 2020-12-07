@@ -1,12 +1,12 @@
 # Rancang KRS
 <br>
+Aplikasi simulasi merancang KRS berkurikulum Teknik Informatika UM 2019 berbasis web dengan framework CodeIgniter 3.
+<br>
 Kelompok 3: <br>
 - Angga Dian Permana Putra  (190535746102) <br>
 - Jaka Asa Baldan Ahmad     (190535646020) <br>
 - Rizki Indah Pertiwi 	    (190535646006) <br>
 - Sylvia Helmi Nurjannah    (190535646077) <br>
-<br>
-Aplikasi simulasi merancang KRS berkurikulum Teknik Informatika UM 2019 berbasis web dengan framework CodeIgniter 3.
 <br>
 
 # Kebutuhan
