@@ -101,7 +101,7 @@ class Main extends CI_Controller {
 								]
 								//'telah_selesai' => false
 							],
-							"NINF6016" => [
+							"NINF6018" => [
 								"nama_mk" => "Teori Bahasa dan Automata", //NINF6016
 								//"jadwal_mk" => "Selasa, 11:00-13:00",
 								"sks" => 3,
