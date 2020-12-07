@@ -342,6 +342,15 @@ class Main extends CI_Controller {
 							  ]
 							  //'telah_selesai' => false
 							],
+							"NINF6046" => [
+								"nama_mk" => "Machine Learning",//NINF6055
+								//"jadwal_mk" => "Jumat, 13:00-16:00",
+								"sks" => 3,
+								"mk_prasyarat" => [
+								  ""
+								]
+								//'telah_selesai' => false
+							  ]
 							)
 
 			);
